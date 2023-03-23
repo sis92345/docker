@@ -8,6 +8,11 @@ RUN npm install
 
 COPY . .
 
-EXPOSE 80
+# Dockerfile 내부에서만 사용 가능한 ARG, ARG [ARG NAME]=[VALUE]
+ARG DEFAULT_PORT=80
+# ENVironment PORT ENV 설정, 디폴트 값은 80
+ENV PORT $DEFAULT_PORT
+
+EXPOSE $PORT
 
 CMD [ "node" , "server.js" ]
