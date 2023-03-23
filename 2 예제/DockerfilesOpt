@@ -1,0 +1,14 @@
+FROM node:14
+
+WORKDIR /app
+
+# npm install cache 안되는거 방지용
+COPY package.json /app
+
+RUN npm install
+
+COPY . /app
+
+EXPOSE 80
+
+CMD [ "node" , "server.js" ]
