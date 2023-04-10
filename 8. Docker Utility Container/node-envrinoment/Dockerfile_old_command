@@ -1,0 +1,6 @@
+# 옛날 명령어
+FROM node
+
+WORKDIR /app
+
+CMD npm init
